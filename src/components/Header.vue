@@ -1,0 +1,110 @@
+<template>
+  <header class="sticky top-0 z-50">
+    <!-- Primary Menu Row -->
+    <div class="bg-white shadow-sm border-b">
+      <div class="container mx-auto flex items-center justify-between px-4 py-2">
+        <!-- Left: Logo -->
+        <div class="text-lg font-bold text-primary tracking-wide">Click HR</div>
+
+        <!-- Center: Navigation Tabs -->
+        <nav class="flex space-x-4">
+          <button
+            v-for="item in topMenus"
+            :key="item.key"
+            @click="setActiveMain(item.key)"
+            class="px-3 py-2 text-sm font-medium rounded-t-md transition"
+            :class="{
+              'text-white border-b-2 bg-primary border-primary': activeMain === item.key,
+              'text-gray-700 hover:text-primary': activeMain !== item.key
+            }"
+          >
+            {{ item.label }}
+          </button>
+        </nav>
+
+        <!-- Right: Search + Notifications + Profile -->
+        <div class="flex items-center space-x-4">
+          <input
+            type="search"
+            placeholder="Search..."
+            class="px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none w-40 sm:w-56"
+          />
+          <button class="relative p-2 rounded-full hover:bg-gray-100">
+            <BellIcon class="w-5 h-5 text-gray-600" />
+            <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full ring ring-white"></span>
+          </button>
+          <button class="p-1.5 rounded-full hover:bg-gray-100">
+            <UserCircleIcon class="w-6 h-6 text-gray-600" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Submenu Row -->
+    <div
+      v-if="activeSubmenus.length"
+      class="bg-primary text-white text-sm px-4"
+    >
+      <div class="container mx-auto flex space-x-6 py-2 overflow-x-auto">
+        <router-link
+          v-for="sub in activeSubmenus"
+          :key="sub.path"
+          :to="sub.path"
+          class="hover:underline"
+          :class="{
+            'font-semibold underline': $route.path === sub.path
+          }"
+        >
+          {{ sub.label }}
+        </router-link>
+      </div>
+    </div>
+  </header>
+</template>
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import BellIcon from '../icons/BellIcon.vue';
+import UserCircleIcon from '../icons/UserCircleIcon.vue';
+
+const route = useRoute();
+const activeMain = ref('dashboard');
+
+// Top Tabs
+const topMenus = [
+  { key: 'dashboard', label: 'Dashboard' },
+  { key: 'jobs', label: 'Jobs' },
+  { key: 'talent', label: 'Talent' },
+  { key: 'timesheet', label: 'Timesheet' },
+  { key: 'companies', label: 'Companies' },
+  { key: 'documents', label: 'Documents' },
+  
+];
+
+// Secondary Submenus
+const submenus = {
+  dashboard: [
+    { label: 'Overview', path: '/dashboard' },
+    { label: 'Tasks', path: '/dashboard/analytics' },
+    { label: 'Add Users', path: '/dashboard/users' },
+    { label: 'Setting', path: '/dashboard/settings' }
+
+  ],
+  jobs: [
+    { label: 'Dashboard', path: '/dashboard' },
+    { label: 'Tasks', path: '/dashboard/tasks' },
+    { label: 'Add Widget', path: '/dashboard/add-widget' }
+  ],
+  talent: [],
+  timesheet: [],
+  companies: [],
+  documents: [],
+
+};
+
+const activeSubmenus = computed(() => submenus[activeMain.value] || []);
+
+function setActiveMain(menuKey: string) {
+  activeMain.value = menuKey;
+}
+</script>

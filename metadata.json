@@ -1,0 +1,5 @@
+{
+  "name": "Modern Vue Dashboard",
+  "description": "A simple, clean, and beautiful dashboard application built with Vue.js 3, TypeScript, and Tailwind CSS, featuring routing for dashboard pages, landing, login, and signup pages.",
+  "requestFramePermissions": []
+}
