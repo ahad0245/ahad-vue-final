@@ -6,7 +6,7 @@
         <p>Quickly identify deadlines or important days at a glance.</p>
       </div>
       <button @click="openCreateProjectModal" class="create-project-btn">
-        Create Project
+        Create Task
       </button>
     </div>
 
@@ -36,10 +36,25 @@
             <input type="text" id="projectName" v-model="newProject.title" required>
           </div>
 
+          <div class="form-row">
+
           <div class="form-group">
               <label for="projectDate">Date:</label>
               <input type="date" id="projectDate" v-model="newProject.projectDate" required>
           </div>
+           <div class="form-group">
+              <label>Color:</label>
+              <div class="color-options">
+                <span
+                  v-for="color in colorOptions"
+                  :key="color.class"
+                  :class="{ selected: newProject.class === color.class }"
+                  :style="{ backgroundColor: color.bg }"
+                  @click="newProject.class = color.class"
+                ></span>
+              </div>
+          </div>
+        </div>
           
           <div class="form-row">
             <div class="form-group">
@@ -52,17 +67,12 @@
             </div>
           </div>
           
-          <div class="form-group">
-              <label>Color:</label>
-              <div class="color-options">
-                <span
-                  v-for="color in colorOptions"
-                  :key="color.class"
-                  :class="{ selected: newProject.class === color.class }"
-                  :style="{ backgroundColor: color.bg }"
-                  @click="newProject.class = color.class"
-                ></span>
-              </div>
+         
+
+          
+         <div class="form-group">
+            <label for="projectName">Task Description:</label>
+            <textarea name="" id="" class="w-full border rounded" ></textarea>
           </div>
 
           <div class="form-actions">
@@ -186,7 +196,7 @@ export default {
 .vuecal__event.red-event {background-color: rgba(244, 67, 54, 0.85); border: 1px solid #e53935; color: #fff;}
 
 /* Modal styles */
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 80%; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 1000; }
 .modal-content { background-color: white; padding: 25px 30px; border-radius: 8px; width: 90%; max-width: 450px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 .close-modal-btn { position: absolute; top: 10px; right: 15px; font-size: 28px; font-weight: bold; color: #aaa; background: none; border: none; cursor: pointer; }
 .modal-content h3 { margin-top: 0; margin-bottom: 25px; color: #333; text-align: center; }

@@ -2,9 +2,9 @@
   <header class="sticky top-0 z-50">
     <!-- Primary Menu Row -->
     <div class="bg-white shadow-sm border-b">
-      <div class="container mx-auto flex items-center justify-between px-4 py-2">
+      <div class="container mx-auto flex items-center justify-between px-4 pt-2">
         <!-- Left: Logo -->
-        <div class="text-lg font-bold text-primary tracking-wide">Click HR</div>
+        <div class="text-lg font-bold text-primary tracking-wide"><img src="../assets/logo.png" class="w-28" alt="" srcset=""></div>
 
         <!-- Center: Navigation Tabs -->
         <nav class="flex space-x-4">
