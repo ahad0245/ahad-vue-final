@@ -97,7 +97,11 @@ const submenus = {
     { label: 'Tasks', path: '/dashboard/tasks' },
     { label: 'Add Widget', path: '/dashboard/add-widget' }
   ],
-  talent: [],
+  talent: [
+    { label: 'Talent Overview', path: '/dashboard/talentoverview' },
+    { label: 'Add Talent', path: '/dashboard/addtalent' },
+    
+  ],
   timesheet: [],
   companies: [],
   documents: [],

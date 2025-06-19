@@ -10,6 +10,9 @@ import NotFoundPage from '../pages/NotFoundPage.vue';
 import UsersPage from '../pages/UsersPage.vue';
 import BackOfficePage from '../pages/BackOfficePage.vue';
 import AppConfigPage from '../pages/AppConfigPage.vue';
+import AddTalentpage from '../pages/AddTalentpage.vue';
+import OverviewTalentPage from '../pages/OverviewTalentPage.vue';
+import OverviewTalentPage from '../pages/OverviewTalentPage.vue';
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -70,6 +73,18 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Application Confiq',
         component: AppConfigPage,
         meta: { title: 'Application Config' }
+      },
+      {
+        path: 'addtalent',
+        name: 'Add Talent',
+        component: AddTalentpage,
+        meta: { title: 'Add Talent' }
+      },
+       {
+        path: 'talentoverview',
+        name: 'Talent Overview',
+        component: OverviewTalentPage,
+        meta: { title: 'Talent Overview' }
       },
 
     ],
