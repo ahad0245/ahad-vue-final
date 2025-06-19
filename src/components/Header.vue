@@ -52,7 +52,7 @@
           :to="sub.path"
           class="hover:underline"
           :class="{
-            'font-semibold underline': $route.path === sub.path
+            'font-semibold ': $route.path === sub.path
           }"
         >
           {{ sub.label }}

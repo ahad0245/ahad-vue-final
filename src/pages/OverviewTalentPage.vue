@@ -102,7 +102,7 @@
 
     <!-- Talent Profile Modal -->
     <div v-if="showProfileModal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center p-4 z-50 overflow-auto">
-      <div class="bg-white rounded-lg shadow-xl p-6 max-w-3xl w-full my-8 relative">
+      <div class="bg-white rounded-lg shadow-xl mt-auto p-6 max-w-3xl w-full my-8 relative">
         <button @click="closeProfileModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -265,8 +265,8 @@ const talents = ref<Talent[]>([
   {
     id: '1',
     personal: {
-      firstName: 'Alice',
-      lastName: 'Smith',
+      firstName: 'Abdul',
+      lastName: 'Ahad',
       headline: 'Senior Software Engineer specializing in Vue.js',
       country: 'United States of America',
       address: '123 Main St', city: 'Anytown', state: 'CA', zipCode: '90210',
