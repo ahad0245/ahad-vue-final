@@ -8,6 +8,8 @@ import LoginPage from '../pages/LoginPage.vue';
 import SignupPage from '../pages/SignupPage.vue';
 import NotFoundPage from '../pages/NotFoundPage.vue';
 import UsersPage from '../pages/UsersPage.vue';
+import BackOfficePage from '../pages/BackOfficePage.vue';
+import AppConfigPage from '../pages/AppConfigPage.vue';
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -56,6 +58,18 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Users',
         component: UsersPage,
         meta: { title: 'Users' }
+      },
+       {
+        path: 'backoffice',
+        name: 'Back Office',
+        component: BackOfficePage,
+        meta: { title: 'Back Office' }
+      },
+      {
+        path: 'app-config',
+        name: 'Application Confiq',
+        component: AppConfigPage,
+        meta: { title: 'Application Config' }
       },
 
     ],

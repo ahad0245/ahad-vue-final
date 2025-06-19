@@ -2,7 +2,7 @@
   <div class="space-y-6">
     <!-- Top Message -->
     <div>
-      <h1 class="text-3xl font-bold text-gray-800">Welcome Back!</h1>
+      <h1 class="text-3xl font-bold text-gray-700">Welcome Back!</h1>
       <p class="text-gray-600">Here's what's happening with your projects today.</p>
     </div>
 

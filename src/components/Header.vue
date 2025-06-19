@@ -86,6 +86,8 @@ const submenus = {
   dashboard: [
     { label: 'Overview', path: '/dashboard' },
     { label: 'Tasks', path: '/dashboard/analytics' },
+    { label: 'Back Office', path: '/dashboard/backoffice' },
+    { label: 'Application Config', path: '/dashboard/app-config' },
     { label: 'Add Users', path: '/dashboard/users' },
     { label: 'Setting', path: '/dashboard/settings' }
 
