@@ -7,3 +7,6 @@
 .vuecal--month-view .vuecal__heading, .vuecal--week-view .vuecal__heading, .vuecal--day-view .vuecal__heading {
     font-size: 12px !important;
 }
+body {
+  font-family: 'Inter', sans-serif; /* Example: Adding a modern sans-serif font */
+}
