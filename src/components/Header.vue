@@ -66,31 +66,32 @@ import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import BellIcon from '../icons/BellIcon.vue';
 import UserCircleIcon from '../icons/UserCircleIcon.vue';
+import { useAuthStore } from '../stores/useAuthStore';
 
 const route = useRoute();
+const auth = useAuthStore(); // ✅ here is the auth user role
+
 const activeMain = ref('dashboard');
 
-// Top Tabs
+// Top-level tabs
 const topMenus = [
   { key: 'dashboard', label: 'Dashboard' },
   { key: 'jobs', label: 'Jobs' },
   { key: 'talent', label: 'Talent' },
   { key: 'timesheet', label: 'Timesheet' },
   { key: 'companies', label: 'Companies' },
-  { key: 'documents', label: 'Documents' },
-  
+  { key: 'documents', label: 'Documents' }
 ];
 
-// Secondary Submenus
+// Submenus with optional role filtering
 const submenus = {
   dashboard: [
-    { label: 'Overview', path: '/dashboard' },
-    { label: 'Tasks', path: '/dashboard/analytics' },
-    { label: 'Back Office', path: '/dashboard/backoffice' },
-    { label: 'Application Config', path: '/dashboard/app-config' },
-    { label: 'Add Users', path: '/dashboard/users' },
-    { label: 'Setting', path: '/dashboard/settings' }
-
+    { label: 'Overview', path: '/dashboard', roles: ['admin', 'recruiter', 'viewer'] },
+    { label: 'Tasks', path: '/dashboard/analytics', roles: ['admin', 'recruiter', 'viewer'] },
+    { label: 'Back Office', path: '/dashboard/backoffice', roles: ['admin'] },
+    { label: 'Application Config', path: '/dashboard/app-config', roles: ['admin'] },
+    { label: 'Add Users', path: '/dashboard/users', roles: ['admin'] },
+    { label: 'Setting', path: '/dashboard/settings', roles: ['admin'] }
   ],
   jobs: [
     { label: 'Dashboard', path: '/dashboard' },
@@ -99,18 +100,24 @@ const submenus = {
   ],
   talent: [
     { label: 'Talent Overview', path: '/dashboard/talentoverview' },
-    { label: 'Add Talent', path: '/dashboard/addtalent' },
-    
+    { label: 'Add Talent', path: '/dashboard/addtalent' }
   ],
   timesheet: [],
   companies: [],
-  documents: [],
-
+  documents: []
 };
 
-const activeSubmenus = computed(() => submenus[activeMain.value] || []);
+// Only return submenu items allowed for the current user role
+const activeSubmenus = computed(() => {
+  const items = submenus[activeMain.value] || [];
+  return items.filter(item => {
+    return !item.roles || item.roles.includes(auth.userRole);
+  });
+});
 
+// Handler
 function setActiveMain(menuKey: string) {
   activeMain.value = menuKey;
 }
 </script>
+

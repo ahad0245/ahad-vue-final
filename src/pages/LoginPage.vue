@@ -114,19 +114,28 @@ function goToPassword() {
 }
 
 // MODIFIED: Updated logic for the login step
-function submitLogin() {
-  // Reset error
-  passwordError.value = '';
+import { useAuthStore } from '../stores/useAuthStore.ts'; // 👈 here is the auth user role
+const auth = useAuthStore();
 
-  if (!password.value) {
-    passwordError.value = 'Password field cannot be empty.';
-    return;
+function submitLogin() {
+  if (email.value && password.value) {
+    // Example: Simulate roles based on email
+    const domain = email.value.split('@')[1];
+    if (domain === 'admin.com') {
+      auth.setUserRole('admin');
+    } else if (domain === 'hr.com') {
+      auth.setUserRole('recruiter');
+    } else {
+      auth.setUserRole('viewer');
+    }
+
+    alert(`Logged in as ${auth.userRole}`);
+    router.push('/dashboard');
+  } else {
+    alert('Password field cannot be empty.');
   }
-  
-  console.log('Calling login API with:', email.value, password.value);
-  // Simulate successful login and redirect
-  router.push('/dashboard');
 }
+
 
 // NOTE: You can apply the same error handling pattern to the 'Forgot Password' step.
 function sendReset() {

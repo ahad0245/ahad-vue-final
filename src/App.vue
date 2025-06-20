@@ -4,6 +4,8 @@
 
 <script setup lang="ts">
 // This is the main App component. It simply renders the current route's component.
+import { useAuthStore } from './stores/useAuthStore.ts';
+const auth = useAuthStore();
 </script>
 
 <style>
