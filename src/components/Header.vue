@@ -29,13 +29,15 @@
             placeholder="Search..."
             class="px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none w-40 sm:w-56"
           />
-          <button class="relative p-2 rounded-full hover:bg-gray-100">
+          <NotificationDropdown/>
+          <!-- <button class="relative p-2 rounded-full hover:bg-gray-100">
             <BellIcon class="w-5 h-5 text-gray-600" />
             <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full ring ring-white"></span>
-          </button>
-          <button class="p-1.5 rounded-full hover:bg-gray-100">
+          </button> -->
+          <!-- <button class="p-1.5 rounded-full hover:bg-gray-100">
             <UserCircleIcon class="w-6 h-6 text-gray-600" />
-          </button>
+          </button> -->
+          <UserProfileDropdown/>  
         </div>
       </div>
     </div>
@@ -67,6 +69,8 @@ import { useRoute } from 'vue-router';
 import BellIcon from '../icons/BellIcon.vue';
 import UserCircleIcon from '../icons/UserCircleIcon.vue';
 import { useAuthStore } from '../stores/useAuthStore';
+import NotificationDropdown from './NotificationDropdown.vue';
+import UserProfileDropdown from './UserProfileDropdown.vue';
 
 const route = useRoute();
 const auth = useAuthStore(); // ✅ here is the auth user role
