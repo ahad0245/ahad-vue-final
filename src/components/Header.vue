@@ -186,12 +186,12 @@ const submenus = {
     { label: 'Submit Timesheet', path: '/timesheet/submit' }
   ],
   companies: [
-    { label: 'Company List', path: '/companies' },
-    { label: 'Add Company', path: '/companies/add' }
+    { label: 'Companies List', path: '/dashboard/companies' },
+    { label: 'Add Companies', path: '/dashboard/addcompanies' }
   ],
   documents: [
-    { label: 'My Documents', path: '/documents' },
-    { label: 'Upload Document', path: '/documents/upload' }
+    { label: 'My Documents', path: '/dashboard/documents' },
+    { label: 'Upload Document', path: '/dashboard/documents/upload' }
   ]
 };
 

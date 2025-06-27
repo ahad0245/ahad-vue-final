@@ -12,6 +12,8 @@ import BackOfficePage from '../pages/BackOfficePage.vue';
 import AppConfigPage from '../pages/AppConfigPage.vue';
 import OverviewTalentPage from '../pages/OverviewTalentPage.vue';
 import AddTalentpage from '../pages/AddTalentpage.vue';
+import OverviewCompaniesPage from '../pages/OverviewCompaniesPage.vue';
+import AddCompaniesPage from '../pages/AddCompaniesPage.vue';
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -85,6 +87,19 @@ const routes: Array<RouteRecordRaw> = [
         component: OverviewTalentPage,
         meta: { title: 'Talent Overview' }
       },
+      {
+        path: 'companies',
+        name: 'Companies Overview',
+        component: OverviewCompaniesPage,
+        meta: { title: 'Companies Overview' }
+      },
+       {
+        path: 'addcompanies',
+        name: 'Add Companies',
+        component: AddCompaniesPage,
+        meta: { title: 'Add Companies' }
+      },
+      
      
 
     ],
