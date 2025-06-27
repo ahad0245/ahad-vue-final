@@ -30,7 +30,7 @@
       </ul>
     </nav>
     <div class="p-4 border-t border-gray-700">
-      <p class="text-xs text-gray-500">&copy; {{ new Date().getFullYear() }} Click-HR</p>
+      <p class="text-xs text-gray-500">&copy; {{ new Date().getFullYear() }} Click-HR</p>                                                                                                    
     </div>
   </div>
 </template>

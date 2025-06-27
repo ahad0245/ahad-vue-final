@@ -16,6 +16,7 @@
     "@fullcalendar/vue3": "^6.1.17",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vueuse/core": "^13.3.0",
+    "axios": "^1.10.0",
     "pinia": "^3.0.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

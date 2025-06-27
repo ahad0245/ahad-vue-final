@@ -10,9 +10,8 @@ import NotFoundPage from '../pages/NotFoundPage.vue';
 import UsersPage from '../pages/UsersPage.vue';
 import BackOfficePage from '../pages/BackOfficePage.vue';
 import AppConfigPage from '../pages/AppConfigPage.vue';
+import OverviewTalentPage from '../pages/OverviewTalentPage.vue';
 import AddTalentpage from '../pages/AddTalentpage.vue';
-import OverviewTalentPage from '../pages/OverviewTalentPage.vue';
-import OverviewTalentPage from '../pages/OverviewTalentPage.vue';
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -86,6 +85,7 @@ const routes: Array<RouteRecordRaw> = [
         component: OverviewTalentPage,
         meta: { title: 'Talent Overview' }
       },
+     
 
     ],
   },
