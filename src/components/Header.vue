@@ -19,12 +19,12 @@
         </div>
 
         <!-- Center: Navigation Tabs (Desktop) -->
-        <nav class="hidden lg:flex space-x-4">
+        <nav class=" hidden lg:flex space-x-4">
           <button
             v-for="item in topMenus"
             :key="item.key"
             @click="setActiveMainAndNavigate(item.key)"
-            class="px-3 py-2 text-sm font-medium rounded-t-md transition-all duration-200"
+            class=" custom-ahad-ahad px-3 py-2 text-sm font-medium rounded-t-md transition-all duration-200"
             :class="{
               'text-white bg-blue-600': activeMain === item.key,
               'text-gray-700 hover:text-blue-600 hover:bg-gray-100': activeMain !== item.key
@@ -51,7 +51,7 @@
     <!-- Secondary Submenu Row (Desktop) -->
     <div
       v-if="activeSubmenus.length && !sidebarOpen"
-      class="bg-blue-600 text-white text-sm px-4 hidden lg:block"
+      class="custom-ahad bg-blue-600 text-white text-sm px-4 hidden lg:block"
     >
       <div class="container mx-auto flex space-x-6 py-2 overflow-x-auto">
         <router-link
@@ -75,7 +75,7 @@
           <!-- Sidebar Header -->
           <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
             <div class="text-lg font-bold text-blue-600 tracking-wide">
-              <img src="https://placehold.co/100x40/b3e0ff/0056b3?text=Logo" class="w-28 h-auto" alt="Company Logo" />
+              <img src="../assets/logo.png" class="w-28 h-auto" alt="Company Logo" />
             </div>
             <button @click="closeSidebar" class="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -283,5 +283,12 @@ watch(() => window.innerWidth, (newWidth) => {
 
 .nav-tab-inactive {
   @apply text-gray-700 hover:text-blue-600 hover:bg-gray-100;
+}
+
+.custom-ahad{
+margin-top: -13px;
+}
+.custom-ahad-ahad{
+  padding-bottom: 10px;
 }
 </style>
