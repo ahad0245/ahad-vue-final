@@ -152,9 +152,9 @@ const activeMain = ref('dashboard'); // Default active main menu item
 
 // Top-level tabs
 const topMenus = [
-  { key: 'dashboard', label: 'Dashboard', defaultPath: '/dashboard' },
+  { key: 'dashboard', label: 'Dashboard', defaultPath: '/dashboard'  },
   { key: 'jobs', label: 'Jobs', defaultPath: '/jobs' },
-  { key: 'talent', label: 'Talent', defaultPath: '/talent' },
+  { key: 'talent', label: 'Talent', defaultPath: '/dashboard/talentoverview' },
   { key: 'timesheet', label: 'Timesheet', defaultPath: '/timesheet' },
   { key: 'companies', label: 'Companies', defaultPath: '/companies' },
   { key: 'documents', label: 'Documents', defaultPath: '/documents' }
@@ -165,33 +165,38 @@ const topMenus = [
 // You might need to adjust these paths to match your actual router setup.
 const submenus = {
   dashboard: [
-    { label: 'Overview', path: '/dashboard', roles: ['admin', 'recruiter', 'viewer'] },
-    { label: 'Tasks', path: '/dashboard/tasks', roles: ['admin', 'recruiter', 'viewer'] },
-    { label: 'Back Office', path: '/dashboard/backoffice', roles: ['admin'] },
-    { label: 'Application Config', path: '/dashboard/app-config', roles: ['admin'] },
-    { label: 'Add Users', path: '/dashboard/users', roles: ['admin'] },
-    { label: 'Setting', path: '/dashboard/settings', roles: ['admin'] }
+    { label: 'Overview', path: '/dashboard', roles: ['recruiter', 'viewer'] },
+    { label: 'Overview', path: '/backoffice', roles: ['admin'] },
+    { label: 'Create Backoffice User', path: '/backoffice/createuser', roles: ['admin'] },
+    { label: 'Setup', path: '/backoffice/setup', roles: ['admin'] },
+
+
+    { label: 'Tasks', path: '/dashboard/tasks', roles: [ 'recruiter', 'viewer'] },
+    // { label: 'Back Office', path: '/dashboard/backoffice', roles: ['admin'] },
+    { label: 'Application Config', path: '/dashboard/app-config', roles: ['viewer', 'recruiter'] },
+    { label: 'Add Users', path: '/dashboard/users', roles: ['recruiter'] },
+    { label: 'Setting', path: '/dashboard/settings', roles: ['viewer', 'recruiter'] }
   ],
   jobs: [
-    { label: 'Job Board', path: '/dashboard/jobs' },
-    { label: 'My Applications', path: '/dashboard/jobs/my-applications' },
-    { label: 'Create Job', path: '/dashboard/jobs/create' }
+    { label: 'Job Board', path: '/dashboard/jobs', roles: ['recruiter'] },
+    { label: 'My Applications', path: '/dashboard/jobs/my-applications' , roles: ['recruiter'] },
+    { label: 'Create Job', path: '/dashboard/jobs/create' , roles: ['recruiter']}
   ],
   talent: [
-    { label: 'Talent Overview', path: '/dashboard/talentoverview' },
-    { label: 'Add Talent', path: '/dashboard/addtalent' }
+    { label: 'Talent Overview', path: '/dashboard/talentoverview'  ,  roles: ['recruiter'] },
+    { label: 'Add Talent', path: '/dashboard/addtalent' ,  roles: ['recruiter']}
   ],
   timesheet: [
-    { label: 'My Timesheets', path: '/timesheet' },
-    { label: 'Submit Timesheet', path: '/timesheet/submit' }
+    { label: 'My Timesheets', path: '/timesheet'  ,  roles: ['recruiter'] },
+    { label: 'Submit Timesheet', path: '/timesheet/submit'   ,  roles: ['recruiter'] }
   ],
   companies: [
-    { label: 'Companies List', path: '/dashboard/companies' },
-    { label: 'Add Companies', path: '/dashboard/addcompanies' }
+    { label: 'Companies List', path: '/dashboard/companies'  , roles: ['recruiter'] },
+    { label: 'Add Companies', path: '/dashboard/addcompanies'  , roles: ['recruiter']}
   ],
   documents: [
-    { label: 'My Documents', path: '/dashboard/documents' },
-    { label: 'Upload Document', path: '/dashboard/documents/upload' }
+    { label: 'My Documents', path: '/dashboard/documents' ,roles: ['recruiter'] },
+    { label: 'Upload Document', path: '/dashboard/documents/upload',roles: ['recruiter'] }
   ]
 };
 

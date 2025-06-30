@@ -8,12 +8,15 @@ import LoginPage from '../pages/LoginPage.vue';
 import SignupPage from '../pages/SignupPage.vue';
 import NotFoundPage from '../pages/NotFoundPage.vue';
 import UsersPage from '../pages/UsersPage.vue';
-import BackOfficePage from '../pages/BackOfficePage.vue';
+
 import AppConfigPage from '../pages/AppConfigPage.vue';
 import OverviewTalentPage from '../pages/OverviewTalentPage.vue';
 import AddTalentpage from '../pages/AddTalentpage.vue';
 import OverviewCompaniesPage from '../pages/OverviewCompaniesPage.vue';
 import AddCompaniesPage from '../pages/AddCompaniesPage.vue';
+import BackOfficePage from '../backOffice/BackOfficePage.vue';
+import CreateUser from '../backOffice/createUser.vue';
+import SetupPage from '../backOffice/setupPage.vue';
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -63,12 +66,7 @@ const routes: Array<RouteRecordRaw> = [
         component: UsersPage,
         meta: { title: 'Users' }
       },
-       {
-        path: 'backoffice',
-        name: 'Back Office',
-        component: BackOfficePage,
-        meta: { title: 'Back Office' }
-      },
+       
       {
         path: 'app-config',
         name: 'Application Confiq',
@@ -104,6 +102,35 @@ const routes: Array<RouteRecordRaw> = [
 
     ],
   },
+    {
+    path: '/backoffice',
+    component: DashboardLayout,
+    children: [ 
+
+
+      {
+        path: '',
+        name: 'Back Office',
+        component: BackOfficePage,
+        meta: { title: 'Back Office' }
+      },
+      {
+        path: 'createUser',
+        name: 'Create Back Office',
+        component: CreateUser,
+        meta: { title: 'create user' }
+      },
+      {
+        path: 'setup',
+        name: 'Setup Back Office',
+        component: SetupPage,
+        meta: { title: 'Setup Back Office' }
+      },
+
+
+
+    ],
+    },
   {
     path: '/:pathMatch(.*)*', // Catch-all route for 404
     name: 'NotFound',

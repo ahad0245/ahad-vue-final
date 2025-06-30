@@ -123,18 +123,22 @@ function submitLogin() {
     const domain = email.value.split('@')[1];
     if (domain === 'admin.com') {
       auth.setUserRole('admin');
+      alert(`Logged in as ${auth.userRole}`);
+      router.push('/backoffice'); // Redirect admins to BackOffice
     } else if (domain === 'hr.com') {
       auth.setUserRole('recruiter');
+      alert(`Logged in as ${auth.userRole}`);
+      router.push('/dashboard'); // Recruiters go to dashboard
     } else {
       auth.setUserRole('viewer');
+      alert(`Logged in as ${auth.userRole}`);
+      router.push('/dashboard'); // Default viewer route
     }
-
-    alert(`Logged in as ${auth.userRole}`);
-    router.push('/dashboard');
   } else {
     alert('Password field cannot be empty.');
   }
 }
+
 
 
 // NOTE: You can apply the same error handling pattern to the 'Forgot Password' step.
