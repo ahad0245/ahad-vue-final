@@ -190,7 +190,7 @@
     </div>
 
     <!-- Collapsible Cities Section -->
-    <div class="mb-4 border border-gray-200 rounded-lg shadow-sm">
+    <!-- <div class="mb-4 border border-gray-200 rounded-lg shadow-sm">
       <button @click="toggleCollapsible('cities')" class="flex justify-between items-center w-full p-4 bg-white hover:bg-gray-50 rounded-t-lg focus:outline-none transition-colors duration-200">
         <span class="font-semibold text-gray-700 text-lg">Cities</span>
         <svg :class="['w-6 h-6 text-gray-600 transition-transform duration-200', { 'rotate-180': openCollapsible.cities }]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -245,7 +245,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- General Message Modal -->
     <div v-if="showMessageModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -278,7 +278,7 @@ const defaultRoles = [
 
 const defaultCountries = countriesJson;
 const defaultStates = statesJson;
-const defaultCities = citiesJson;
+// const defaultCities = citiesJson;
 
 // --- Reactive State ---
 const openCollapsible = reactive({
@@ -292,7 +292,7 @@ const staticData = reactive({
   roles: [...defaultRoles],
   countries: [...defaultCountries],
   states: [...defaultStates], // Initialize with states data
-  cities: [...defaultCities],
+//   cities: [...defaultCities],
 });
 
 // New entry forms data
@@ -442,7 +442,7 @@ const resetDataInMemory = () => {
   staticData.roles.splice(0, staticData.roles.length, ...defaultRoles);
   staticData.countries.splice(0, staticData.countries.length, ...defaultCountries);
   staticData.states.splice(0, staticData.states.length, ...defaultStates);
-  staticData.cities.splice(0, staticData.cities.length, ...defaultCities);
+//   staticData.cities.splice(0, staticData.cities.length, ...defaultCities);
 };
 
 const resetData = () => {
