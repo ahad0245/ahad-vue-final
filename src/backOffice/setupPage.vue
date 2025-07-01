@@ -97,8 +97,6 @@
                 <td class="py-2 px-4 text-gray-800">{{ country.id }}</td>
                 <td class="py-2 px-4 text-gray-800">{{ country.name }}</td>
                 <td class="py-2 px-4 text-gray-600">{{ country.phoneCode }}</td>
-                <td class="py-2 px-4 text-gray-600">{{ country.emojiU }}</td>
-                <td class="py-2 px-4 text-gray-600">{{ country.native }}</td>
               </tr>
             </tbody>
           </table>
@@ -120,14 +118,7 @@
               <label class="block text-sm font-medium text-gray-600">Phone Code</label>
               <input type="text" v-model="newCountry.phoneCode" class="mt-1 p-2 border border-gray-300 rounded-md w-full" />
             </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-600">EmojiU</label>
-              <input type="text" v-model="newCountry.emojiU" class="mt-1 p-2 border border-gray-300 rounded-md w-full" />
-            </div>
-            <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-gray-600">Native Name</label>
-              <input type="text" v-model="newCountry.native" class="mt-1 p-2 border border-gray-300 rounded-md w-full" />
-            </div>
+            
             <div class="md:col-span-2 text-right">
               <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">Add Country</button>
             </div>
@@ -275,7 +266,7 @@ import { ref, reactive, onMounted } from 'vue';
 // 1. Import your JSON files
 import countriesJson from '../assets/data/countries.json';
 import statesJson from '../assets/data/states.json';
-import citiesJson from '../assets/data/cities.json';
+// import citiesJson from '../assets/data/cities.json';
 
 // --- Static Data Definitions (Default values from imported JSON) ---
 const defaultRoles = [
@@ -306,7 +297,7 @@ const staticData = reactive({
 
 // New entry forms data
 const newRole = reactive({ id: '', name: '', description: '' });
-const newCountry = reactive({ id: '', name: '', phoneCode: '', emojiU: '', native: '' }); // Updated for new country fields
+const newCountry = reactive({ id: '', name: '', phoneCode: ''}); // Updated for new country fields
 const newState = reactive({ id: '', name: '', stateCode: '', countryId: '' }); // New state form data
 const newCity = reactive({ id: '', name: '', stateId: '' }); // Updated for new city fields
 
