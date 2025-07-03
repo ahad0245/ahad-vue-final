@@ -33,7 +33,6 @@
 
 <script setup lang="ts">
 // Using a dynamic import for the icon just as an example, or import it directly
-import { defineAsyncComponent } from 'vue';
 </script>
 
 <style scoped>

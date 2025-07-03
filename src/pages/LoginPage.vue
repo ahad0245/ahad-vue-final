@@ -80,7 +80,7 @@ const LockClosedIcon = defineAsyncComponent(() => import('../icons/LockClosedIco
 const step = ref<'login' | 'password' | 'forgot' | 'sent'>('login');
 const email = ref('');
 const password = ref('');
-const forgotEmail = ref('');
+// const forgotEmail = ref('');
 const router = useRouter();
 
 // MODIFIED: Add reactive state for error messages
@@ -142,10 +142,10 @@ function submitLogin() {
 
 
 // NOTE: You can apply the same error handling pattern to the 'Forgot Password' step.
-function sendReset() {
-  // ...
-}
-function resendEmail() {
-  // ...
-}
+// function sendReset() {
+//   // ...
+// }
+// function resendEmail() {
+//   // ...
+// }
 </script>

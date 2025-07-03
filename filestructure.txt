@@ -1,0 +1,45 @@
+AHAD-VUE-FINAL/
+├── node_modules/
+├── src/
+│   ├── assets/
+│   ├── backOffice/
+│   ├── candidate/
+│   ├── company/
+│   ├── components/
+│   ├── icons/
+│   ├── layouts/
+│   ├── pages/
+│   ├── router/
+│   ├── stores/
+│   ├── App.vue
+│   ├── constants.ts
+│   ├── main.ts
+│   ├── roles.ts
+│   └── style.css
+├── .env.local
+├── .gitignore
+├── index.html
+├── metadata.json
+├── package-lock.json
+├── package.json
+├── README.md
+└── tsconfig.json
+
+
+
+| Folder/File    | Description                                                     |
+| -------------- | --------------------------------------------------------------- |
+| `backOffice/`  | Admin-specific views and logic                                  |
+| `candidate/`   | Candidate-specific components (profile, resume, jobs)           |
+| `company/`     | Recruiter-specific pages (job postings, applications)           |
+| `layouts/`     | Layout wrappers (e.g., BackOfficeLayout.vue, CompanyLayout.vue) |
+| `router/`      | Vue Router configuration (with role-based routes)               |
+| `stores/`      | Pinia stores (e.g., auth.ts, user.ts)                           |
+| `components/`  | Reusable UI components (buttons, modals, forms)                 |
+| `App.vue`      | Root Vue component                                              |
+| `main.ts`      | Entry point — mounts app, injects plugins                       |
+| `constants.ts` | App-wide constants (e.g., roles, API URLs)                      |
+| `roles.ts`     | Optional role map file (for guards or dropdowns)                |
+| `.env.local`   | Environment-specific variables like `VITE_API_URL`              |
+
+
