@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-primary to-blue-700 flex flex-col items-center justify-center p-6 text-white">
     <div class="text-center space-y-6 max-w-2xl">
-      <img src="../assets/white.png" class="h-10 w-45 text-yellow-300 mx-auto" alt="" srcset="">
+      <img src="../../../assets/white.png" class="h-10 w-45 text-yellow-300 mx-auto" alt="" srcset="">
 
       <h1 class="text-5xl font-bold tracking-tight">Welcome to Click-HR Dashboard</h1>
       <p class="text-xl text-blue-100">

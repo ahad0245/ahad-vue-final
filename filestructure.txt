@@ -43,3 +43,69 @@ AHAD-VUE-FINAL/
 | `.env.local`   | Environment-specific variables like `VITE_API_URL`              |
 
 
+
+update file structure for the vue.js file according to instruction
+
+AHAD-VUE-FINAL/
+├── node_modules/
+├── public/
+├── src/
+│   ├── modules/                   # 🔌 Core separation by role/module
+│   │   ├── auth/                  # 🔐 Login, registration, reset, verification
+│   │   │   ├── components/
+│   │   │   ├── pages/
+│   │   │   ├── services/
+│   │   │   └── index.ts
+│   │   ├── backoffice/            # 🛠️ Admin module
+│   │   │   ├── components/
+│   │   │   ├── pages/
+│   │   │   ├── services/
+│   │   │   ├── routes.ts
+│   │   │   └── index.ts
+│   │   ├── company/               # 🧑‍💼 Recruiter module
+│   │   │   ├── components/
+│   │   │   ├── pages/
+│   │   │   ├── services/
+│   │   │   ├── routes.ts
+│   │   │   └── index.ts
+│   │   ├── candidate/             # 🧑‍🎓 Candidate module
+│   │   │   ├── components/
+│   │   │   ├── pages/
+│   │   │   ├── services/
+│   │   │   ├── routes.ts
+│   │   │   └── index.ts
+│   │   └── shared/                # 📦 Shared module between all roles
+│   │       ├── components/
+│   │       ├── utils/
+│   │       ├── hooks/
+│   │       └── services/
+│
+│   ├── layouts/                   # 💡 Layouts: One per module (Admin, Recruiter, Candidate)
+│   │   ├── BackOfficeLayout.vue
+│   │   ├── CompanyLayout.vue
+│   │   └── CandidateLayout.vue
+│
+│   ├── router/
+│   │   ├── index.ts
+│   │   └── guards.ts              # 🚧 Role guards and route protection
+│
+│   ├── stores/                    # 🧠 Pinia stores
+│   │   ├── auth.ts
+│   │   └── user.ts
+│
+│   ├── assets/                    # 🎨 Static images, logos
+│   ├── icons/
+│   ├── constants.ts
+│   ├── roles.ts                   # 🎭 Role mapping & access control
+│   ├── App.vue
+│   ├── main.ts
+│   └── style.css
+│
+├── .env.local
+├── .gitignore
+├── index.html
+├── metadata.json
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md

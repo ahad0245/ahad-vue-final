@@ -17,5 +17,5 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue';
-const ExclamationTriangleIcon = defineAsyncComponent(() => import('../icons/ExclamationTriangleIcon.vue'));
+const ExclamationTriangleIcon = defineAsyncComponent(() => import('../../../assets/icons/ExclamationTriangleIcon.vue'));
 </script>

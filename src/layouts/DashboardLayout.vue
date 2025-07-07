@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 
-import Header from '../components/Header.vue';
+import Header from '../modules/backOffice/components/Header.vue';
 </script>
 
 <style scoped>

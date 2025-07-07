@@ -1,22 +1,22 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import DashboardLayout from '../layouts/DashboardLayout.vue';
-import DashboardOverviewPage from '../pages/DashboardOverviewPage.vue';
-import AnalyticsPage from '../pages/AnalyticsPage.vue';
-import SettingsPage from '../pages/SettingsPage.vue';
-import LandingPage from '../pages/LandingPage.vue';
-import LoginPage from '../pages/LoginPage.vue';
-import SignupPage from '../pages/SignupPage.vue';
-import NotFoundPage from '../pages/NotFoundPage.vue';
-import UsersPage from '../pages/UsersPage.vue';
+import DashboardOverviewPage from '../modules/backOffice/pages/DashboardOverviewPage.vue';
+import AnalyticsPage from '../modules/backOffice/pages/AnalyticsPage.vue';
+import SettingsPage from '../modules/backOffice/pages/SettingsPage.vue';
+import LandingPage from '../modules/backOffice/pages/LandingPage.vue';
+import LoginPage from '../modules/backOffice/pages/LoginPage.vue';
+import SignupPage from '../modules/backOffice/pages/SignupPage.vue';
+import NotFoundPage from '../modules/backOffice/pages/NotFoundPage.vue';
+import UsersPage from '../modules/backOffice/pages/UsersPage.vue';
 
-import AppConfigPage from '../pages/AppConfigPage.vue';
-import OverviewTalentPage from '../pages/OverviewTalentPage.vue';
-import AddTalentpage from '../pages/AddTalentpage.vue';
-import OverviewCompaniesPage from '../pages/OverviewCompaniesPage.vue';
-import AddCompaniesPage from '../pages/AddCompaniesPage.vue';
-import BackOfficePage from '../backOffice/BackOfficePage.vue';
-import CreateUser from '../backOffice/createUser.vue';
-import SetupPage from '../backOffice/setupPage.vue';
+import AppConfigPage from '../modules/backOffice/pages/AppConfigPage.vue';
+import OverviewTalentPage from '../modules/backOffice/pages/OverviewTalentPage.vue';
+import AddTalentpage from '../modules/backOffice/pages/AddTalentpage.vue';
+import OverviewCompaniesPage from '../modules/backOffice/pages/OverviewCompaniesPage.vue';
+import AddCompaniesPage from '../modules/backOffice/pages/AddCompaniesPage.vue';
+import BackOfficePage from '../modules/backOffice/pages/BackOfficePage.vue';
+import CreateUser from '../modules/backOffice/pages/createUser.vue';
+import Users from '../modules/candidate/pages/Users.vue';
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -97,6 +97,12 @@ const routes: Array<RouteRecordRaw> = [
         component: AddCompaniesPage,
         meta: { title: 'Add Companies' }
       },
+      {
+        path: 'dummyUsers',
+        name: 'total Users',
+        component: Users,
+        meta: { title: 'Total' }
+      },
       
      
 
@@ -120,12 +126,7 @@ const routes: Array<RouteRecordRaw> = [
         component: CreateUser,
         meta: { title: 'create user' }
       },
-      {
-        path: 'setup',
-        name: 'Setup Back Office',
-        component: SetupPage,
-        meta: { title: 'Setup Back Office' }
-      },
+     
 
 
 

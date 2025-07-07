@@ -6,7 +6,7 @@
         <!-- Left: Logo -->
         <div class="text-lg font-bold text-primary tracking-wide">
           <!-- Placeholder for logo image, replace with your actual logo URL -->
-          <img src="../assets/logo.png" class="w-28 h-auto" alt="Company Logo" />
+          <img src="../../../assets/logo.png" class="w-28 h-auto" alt="Company Logo" />
         </div>
 
         <!-- Hamburger Icon for Mobile/Tablet -->
@@ -75,7 +75,7 @@
           <!-- Sidebar Header -->
           <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
             <div class="text-lg font-bold text-blue-600 tracking-wide">
-              <img src="../assets/logo.png" class="w-28 h-auto" alt="Company Logo" />
+              <img src="../../../assets/logo.png" class="w-28 h-auto" alt="Company Logo" />
             </div>
             <button @click="closeSidebar" class="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -139,7 +139,7 @@ import { useRoute, useRouter } from 'vue-router';
 // Assuming these are correctly imported from your project structure
 // import BellIcon from '../icons/BellIcon.vue';
 // import UserCircleIcon from '../icons/UserCircleIcon.vue';
-import { useAuthStore } from '../stores/useAuthStore';
+import { useAuthStore } from '../../../stores/useAuthStore';
 import NotificationDropdown from './NotificationDropdown.vue';
 import UserProfileDropdown from './UserProfileDropdown.vue';
 

@@ -40,7 +40,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
-import BellIcon from '../icons/BellIcon.vue';
+import BellIcon from '../../../assets/icons/BellIcon.vue';
 // import MessageIcon from '../icons/MessageIcon.vue';
 
 const show = ref(false);

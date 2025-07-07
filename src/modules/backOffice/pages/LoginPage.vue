@@ -75,7 +75,7 @@
 import { ref, defineAsyncComponent, computed } from 'vue';
 import { useRouter } from 'vue-router';
 
-const LockClosedIcon = defineAsyncComponent(() => import('../icons/LockClosedIcon.vue'));
+const LockClosedIcon = defineAsyncComponent(() => import('../../../assets/icons/LockClosedIcon.vue'));
 
 const step = ref<'login' | 'password' | 'forgot' | 'sent'>('login');
 const email = ref('');
@@ -114,7 +114,7 @@ function goToPassword() {
 }
 
 // MODIFIED: Updated logic for the login step
-import { useAuthStore } from '../stores/useAuthStore.ts'; // 👈 here is the auth user role
+import { useAuthStore } from '../../../stores/useAuthStore.ts'; // 👈 here is the auth user role
 const auth = useAuthStore();
 
 function submitLogin() {
