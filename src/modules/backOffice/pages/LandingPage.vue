@@ -11,10 +11,10 @@
       We combine advanced technology with deep industry insights to redefine how companies recruit top talent!
     </p>
 
-    <img src="../../../assets/company-01.svg" class="w-80 h-auto" alt="">
+    <img src="../../../assets/company-01.svg" class="w-1/2 h-auto" alt="">
   </div>
 
-  <footer class="text-sm text-blue-200 pt-10 text-center border-t border-blue-300">
+  <footer class="text-sm text-blue-200 pt-10 text-center ">
     &copy; {{ new Date().getFullYear() }} Click-HR. All rights reserved.
   </footer>
 </div>
