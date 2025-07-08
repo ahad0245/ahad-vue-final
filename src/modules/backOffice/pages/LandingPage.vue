@@ -1,40 +1,74 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-primary to-blue-700 flex flex-col items-center justify-center p-6 text-white">
-    <div class="text-center space-y-6 max-w-2xl">
-      <img src="../../../assets/white.png" class="h-10 w-45 text-yellow-300 mx-auto" alt="" srcset="">
+  <div class="min-h-screen flex flex-col lg:flex-row bg-gradient-to-br from-primary to-blue-700 text-white">
+    
+  <div class="lg:w-1/2 flex flex-col min-h-screen p-10 text-center">
 
-      <h1 class="text-5xl font-bold tracking-tight">Welcome to Click-HR Dashboard</h1>
-      <p class="text-xl text-blue-100">
-        We combine advanced technology with deep industry insights to redefine how companies recruit top talent!
-      </p>
-      <div class="space-x-4 pt-4">
-        <router-link 
-          to="/login" 
-          class="px-8 py-3 bg-white text-primary font-semibold rounded-lg shadow-md hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
-        >
-          Login
-        </router-link>
-        <router-link 
-          to="/signup" 
-          class="px-8 py-3 bg-white text-primary font-semibold rounded-lg shadow-md hover:bg-white transition-all duration-300 transform hover:scale-105"
-        >
-          Sign Up
-        </router-link>
+  <div class="flex-grow flex flex-col justify-center items-center space-y-6">
+    <img src="../../../assets/white.png" class="h-10 w-45 mx-auto" alt="Click-HR logo" />
+
+    <h1 class="text-4xl font-bold">Welcome to Click-HR Dashboard</h1>
+    <p class="text-lg text-blue-100 ">
+      We combine advanced technology with deep industry insights to redefine how companies recruit top talent!
+    </p>
+
+    <img src="../../../assets/company-01.svg" class="w-80 h-auto" alt="">
+  </div>
+
+  <footer class="text-sm text-blue-200 pt-10 text-center border-t border-blue-300">
+    &copy; {{ new Date().getFullYear() }} Click-HR. All rights reserved.
+  </footer>
+</div>
+
+    <!-- Right Section with Tabs -->
+    <div class="lg:w-1/2 bg-white text-gray-800 flex flex-col justify-center p-10 min-h-[400px]">
+      <div class="max-w-md w-full mx-auto">
+        <!-- Tab Buttons -->
+        <div class="flex justify-center mb-6 space-x-4">
+          <button
+            @click="activeTab = 'login'"
+            :class="[
+              'px-6 py-2 font-semibold rounded-full transition',
+              activeTab === 'login' ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200'
+            ]"
+          >
+            Login
+          </button>
+          <button
+            @click="activeTab = 'signup'"
+            :class="[
+              'px-6 py-2 font-semibold rounded-full transition',
+              activeTab === 'signup' ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200'
+            ]"
+          >
+            Sign Up
+          </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div>
+          <LoginForm v-if="activeTab === 'login'" @go-to-signup="switchToSignup" />
+          <SignupForm v-else @go-to-login="switchToLogin" />
+        </div>
       </div>
-       <p class="text-sm text-blue-200 pt-8">
-        Proceed to <router-link to="/dashboard" class="underline hover:text-yellow-300">Dashboard</router-link> (dev access).
-      </p>
     </div>
-    <footer class="absolute bottom-6 text-center text-blue-200 text-sm">
-      &copy; {{ new Date().getFullYear() }} Click-HR. All rights reserved.
-    </footer>
   </div>
 </template>
 
 <script setup lang="ts">
-// Using a dynamic import for the icon just as an example, or import it directly
+import { ref } from 'vue'
+import LoginForm from './LoginPage.vue'
+import SignupForm from './SignupPage.vue'
+
+const activeTab = ref<'login' | 'signup'>('login')
+// This function can be called from child via emit
+function switchToSignup() {
+  activeTab.value = 'signup'
+}
+function switchToLogin() {
+  activeTab.value = 'login'
+}
 </script>
 
 <style scoped>
-/* You can add specific styles for the landing page here */
+/* Optional custom styles */
 </style>

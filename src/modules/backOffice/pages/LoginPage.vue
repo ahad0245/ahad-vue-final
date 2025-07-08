@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-content-bg flex items-center justify-center p-6 bg-primary">
+  <!-- <div class="min-h-screen bg-content-bg flex items-center justify-center p-6 bg-primary"> -->
     <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-md w-full">
       <div class="text-center mb-8">
         <component :is="LockClosedIcon" class="h-16 w-16 text-primary mx-auto mb-4" />
@@ -62,13 +62,13 @@
             Back to email
         </button>
       </div>
-      
+     
       <p class="mt-8 text-center text-sm text-gray-600">
         Not a member? 
-        <router-link to="/signup" class="font-medium text-primary hover:text-primary-dark">Create an account</router-link>
+         <button class="text-blue-500" @click="handleSignupRedirect">Sign up here</button>
       </p>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script setup lang="ts">
@@ -148,4 +148,9 @@ function submitLogin() {
 // function resendEmail() {
 //   // ...
 // }
+const emit = defineEmits(['go-to-signup'])
+
+function handleSignupRedirect() {
+  emit('go-to-signup')
+}
 </script>
