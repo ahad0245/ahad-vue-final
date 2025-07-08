@@ -190,6 +190,18 @@
     </svg>
     <h1 class="text-2xl font-bold text-gray-800">Check Your Email</h1>
     <p class="text-gray-600 mt-3">We've sent a verification link to your email address. Please check your inbox (and spam folder) to complete your registration.</p>
+    <div class="mt-8">
+        <div class="mt-4 flex flex-wrap justify-center gap-4">
+            <a href="https://mail.google.com/" target="_blank" class="inline-flex items-center gap-2.5 justify-center py-2.5 px-5 text-white font-medium bg-[#EA4335] rounded-lg hover:opacity-90 transition-opacity">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.5v15c0 .83-.67 1.5-1.5 1.5H1.5C.67 21 0 20.33 0 19.5v-15C0 3.67.67 3 1.5 3h21C23.33 3 24 3.67 24 4.5zM12 12.75L21.75 6H2.25L12 12.75zM1.5 19.5h21V7.12l-9.75 6.37-9.75-6.37V19.5z"></path></svg>
+                <span>Open Gmail</span>
+            </a>
+            <a href="https://outlook.live.com/" target="_blank" class="inline-flex items-center gap-2.5 justify-center py-2.5 px-5 text-white font-medium bg-[#0078D4] rounded-lg hover:opacity-90 transition-opacity">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.3 2.62a1.03 1.03 0 00-1.03.2L1.75 10.3a1.03 1.03 0 00-.48.88v9.18c0 .57.46 1.03 1.03 1.03h19.38c.57 0 1.03-.46 1.03-1.03v-9.18c0-.34-.17-.66-.48-.88L13.33 2.83a1.03 1.03 0 00-1.03-.2zM3.82 20.38V12.1l8.18 5.24-8.18 3.04zm16.36 0h-7.66l-2.5-1.6V12.1l10.16-6.5v14.78z"></path></svg>
+                <span>Open Outlook</span>
+            </a>
+        </div>
+    </div>
   </div>
 
   <div v-if="showTermsModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
