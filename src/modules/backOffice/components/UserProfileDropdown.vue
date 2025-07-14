@@ -58,7 +58,7 @@ function closeDropdown() {
 
 function logout() {
   console.log('User logged out');
-  router.push('/login');
+  router.push('/');
   closeDropdown();
 }
 

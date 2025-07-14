@@ -17,6 +17,8 @@ import AddCompaniesPage from '../modules/backOffice/pages/AddCompaniesPage.vue';
 import BackOfficePage from '../modules/backOffice/pages/BackOfficePage.vue';
 import CreateUser from '../modules/backOffice/pages/createUser.vue';
 import Users from '../modules/candidate/pages/Users.vue';
+import Dashboardcandidate from '../modules/candidate/pages/Dashboard.vue';
+import candidatetalent from '../modules/candidate/pages/AddtalentPage.vue';
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -126,6 +128,32 @@ const routes: Array<RouteRecordRaw> = [
         component: CreateUser,
         meta: { title: 'create user' }
       },
+     
+
+
+
+    ],
+    },
+
+    {
+    path: '/candidate',
+    component: DashboardLayout,
+    children: [ 
+
+
+      {
+        path: '',
+        name: 'Candidate Dashboard',
+        component: Dashboardcandidate,
+        meta: { title: 'Back Office' }
+      },
+      {
+        path: 'create-resume',
+        name: 'Create Resume',
+        component: candidatetalent,
+        meta: { title: 'create resume' }
+      },
+     
      
 
 

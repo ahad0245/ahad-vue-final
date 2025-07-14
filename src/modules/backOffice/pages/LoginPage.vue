@@ -132,7 +132,7 @@ function submitLogin() {
     } else {
       auth.setUserRole('viewer');
       alert(`Logged in as ${auth.userRole}`);
-      router.push('/dashboard'); // Default viewer route
+      router.push('/candidate'); // Default viewer route
     }
   } else {
     alert('Password field cannot be empty.');
