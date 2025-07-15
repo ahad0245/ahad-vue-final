@@ -140,7 +140,7 @@ import { useRoute, useRouter } from 'vue-router';
 // import BellIcon from '../icons/BellIcon.vue';
 // import UserCircleIcon from '../icons/UserCircleIcon.vue';
 import { useAuthStore } from '../../../stores/useAuthStore';
-import NotificationDropdown from './NotificationDropdown.vue';
+import NotificationDropdown from '.components/NotificationDropdown.vue';
 import UserProfileDropdown from './UserProfileDropdown.vue';
 
 const route = useRoute();
